@@ -11,6 +11,8 @@ public class Colour {
 
     private final float MAX_RGB_VALUE = 255.0f;
 
+    private final float[] rgbArray = new float[3];
+
 
 
     public Colour(float red, float green, float blue) throws IllegalArgumentException{
@@ -26,12 +28,16 @@ public class Colour {
         this.red = red;
         this.green = green;
         this.blue = blue;
+        this.rgbArray[0] = red * MAX_RGB_VALUE;
+        this.rgbArray[1] = green * MAX_RGB_VALUE;
+        this.rgbArray[2] = blue * MAX_RGB_VALUE;
 
     }
 
     @Override
     public String toString(){
-        return "Red: " + this.red + " || Green: " + this.green + " || Blue: " + this.blue +".";
+        return "Red: " + this.red + " || Green: " + this.green + " || Blue: " + this.blue +
+                " || RGBArray: [" + this.rgbArray[0]  + "],[" + this.rgbArray[1] + "],[" + rgbArray[2] + "].";
     }
 
     public float getRed() {
@@ -57,5 +63,9 @@ public class Colour {
 
     public float getMAX_RGB_VALUE() {
         return MAX_RGB_VALUE;
+    }
+
+    public float[] getRgbArray() {
+        return rgbArray;
     }
 }

@@ -1,12 +1,12 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ColourTest {
-
     @Test
     public void colourThreeParamConstructorRedTest(){
-        Colour testColour = new Colour(1.0f,1.0f,1.0f);
+        Colour testColour = new Colour(1.0f, 1.0f, 1.0f);
         boolean redInRange = 0.0f <= testColour.getRed() && testColour.getRed() <= 1.0f;
         assertTrue(redInRange);
 
@@ -26,5 +26,8 @@ public class ColourTest {
         assertTrue(blueInRange);
 
     }
+
+
+
 
 }
