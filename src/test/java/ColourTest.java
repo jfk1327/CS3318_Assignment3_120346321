@@ -17,7 +17,6 @@ public class ColourTest {
         boolean greenInRange = 0.0f <= testColour.getGreen() && testColour.getGreen() <= 1.0f;
         assertTrue(greenInRange);
 
-
     }
 
     @Test
@@ -27,4 +26,5 @@ public class ColourTest {
         assertTrue(blueInRange);
 
     }
+
 }

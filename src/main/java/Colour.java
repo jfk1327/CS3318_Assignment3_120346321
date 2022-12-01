@@ -4,7 +4,6 @@ public class Colour {
     private final float green;
     private final float blue;
 
-    private final float RGB;
 
     private final float MAX_FLOAT_VALUE = 1.0f;
 
@@ -15,19 +14,24 @@ public class Colour {
 
 
     public Colour(float red, float green, float blue) throws IllegalArgumentException{
-        if (red <= 0.0f || red >= 1.0f){
+        if (red < 0.0f || red > 1.0f){
             throw new IllegalArgumentException("Red Floating Point Value has to be in range 0.0f - 1.0f");
         }
-        if (green <= 0.0f || green >= 1.0f){
+        if (green < 0.0f || green > 1.0f){
             throw new IllegalArgumentException("Green Floating Point Value has to be in range 0.0f - 1.0f");
         }
-        if (blue <= 0.0f || blue >= 1.0f){
+        if (blue < 0.0f || blue > 1.0f){
             throw new IllegalArgumentException("Blue Floating Point Value has to be in range 0.0f - 1.0f");
         }
         this.red = red;
         this.green = green;
         this.blue = blue;
-        this.RGB =  (red * this.MAX_RGB_VALUE) + (blue * this.MAX_RGB_VALUE) + (green * this.MAX_RGB_VALUE);
+
+    }
+
+    @Override
+    public String toString(){
+        return "Red: " + this.red + " || Green: " + this.green + " || Blue: " + this.blue +".";
     }
 
     public float getRed() {
@@ -50,9 +54,6 @@ public class Colour {
         return MIN_FLOAT_VALUE;
     }
 
-    public float getRGB() {
-        return RGB;
-    }
 
     public float getMAX_RGB_VALUE() {
         return MAX_RGB_VALUE;
