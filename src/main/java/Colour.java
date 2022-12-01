@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Colour {
 
     private float red;
@@ -34,7 +36,10 @@ public class Colour {
 
     }
 
-    public Colour(String rgbStringInput){
+    public Colour(String rgbStringInput) throws IllegalArgumentException {
+        if (rgbStringInput.length() != 24)
+            throw new IllegalArgumentException("Input must be a String of length 24 with 3 valid bytes concatenated.");
+
 
     }
 
