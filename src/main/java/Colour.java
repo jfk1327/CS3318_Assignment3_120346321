@@ -1,19 +1,33 @@
 public class Colour {
 
-    private float red;
-    private float green;
-    private float blue;
+    private final float red;
+    private final float green;
+    private final float blue;
+
+    private final float RGB;
 
     private final float MAX_FLOAT_VALUE = 1.0f;
 
     private final float MIN_FLOAT_VALUE = 0.0f;
 
+    private final float MAX_RGB_VALUE = 255.0f;
 
 
-    public Colour(float red, float green, float blue){
+
+    public Colour(float red, float green, float blue) throws IllegalArgumentException{
+        if (red <= 0.0f || red >= 1.0f){
+            throw new IllegalArgumentException("Red Floating Point Value has to be in range 0.0f - 1.0f");
+        }
+        if (green <= 0.0f || green >= 1.0f){
+            throw new IllegalArgumentException("Green Floating Point Value has to be in range 0.0f - 1.0f");
+        }
+        if (blue <= 0.0f || blue >= 1.0f){
+            throw new IllegalArgumentException("Blue Floating Point Value has to be in range 0.0f - 1.0f");
+        }
         this.red = red;
         this.green = green;
         this.blue = blue;
+        this.RGB =  (red * this.MAX_RGB_VALUE) + (blue * this.MAX_RGB_VALUE) + (green * this.MAX_RGB_VALUE);
     }
 
     public float getRed() {
@@ -36,15 +50,11 @@ public class Colour {
         return MIN_FLOAT_VALUE;
     }
 
-    public void setRed(float red) {
-        this.red = red;
+    public float getRGB() {
+        return RGB;
     }
 
-    public void setGreen(float green) {
-        this.green = green;
-    }
-
-    public void setBlue(float blue) {
-        this.blue = blue;
+    public float getMAX_RGB_VALUE() {
+        return MAX_RGB_VALUE;
     }
 }
