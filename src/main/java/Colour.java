@@ -1,8 +1,8 @@
 public class Colour {
 
-    private final float red;
-    private final float green;
-    private final float blue;
+    private float red;
+    private float green;
+    private float blue;
 
 
     private final float MAX_FLOAT_VALUE = 1.0f;
@@ -31,6 +31,10 @@ public class Colour {
         this.rgbArray[0] = red * MAX_RGB_VALUE;
         this.rgbArray[1] = green * MAX_RGB_VALUE;
         this.rgbArray[2] = blue * MAX_RGB_VALUE;
+
+    }
+
+    public Colour(String rgbStringInput){
 
     }
 

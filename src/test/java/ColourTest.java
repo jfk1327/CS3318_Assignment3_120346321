@@ -30,7 +30,7 @@ public class ColourTest {
 
     @Test
     public void colourSingleParamConstructorLengthOfStringTest(){
-        String input = "1111111100000000000000";
+        String input = "111111110000000000000000";
         Colour testColour = new Colour(input);
         assertEquals(24,input.length());
 
