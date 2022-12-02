@@ -82,6 +82,7 @@ public class Colour {
         return true;
     }
 
+
     @Override
     public String toString(){
         return "Red: " + this.red + " || Green: " + this.green + " || Blue: " + this.blue +

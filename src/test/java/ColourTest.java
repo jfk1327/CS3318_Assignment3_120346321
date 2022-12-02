@@ -57,7 +57,19 @@ public class ColourTest {
         }
     }
 
+    @Test
+    public void colourEqualsMethodTest(){
+        Colour testColour1 = new Colour(1.0f, 1.0f, 1.0f);
+        Colour testColour2 = new Colour(1.0f, 1.0f, 1.0f);
+        assertTrue(testColour1.equals(testColour2));
+
+    }
 
 
 
 }
+
+
+
+
+
