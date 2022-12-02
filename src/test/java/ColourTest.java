@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -58,11 +58,22 @@ public class ColourTest {
     }
 
     @Test
-    public void colourEqualsMethodTest(){
+    public void colourEqualsMethodTestDifferentColourObjects(){
         Colour testColour1 = new Colour(1.0f, 1.0f, 1.0f);
         Colour testColour2 = new Colour(1.0f, 1.0f, 1.0f);
         assertTrue(testColour1.equals(testColour2));
 
+    }
+    @Test
+    public void colourEqualsMethodTestSelfEquals(){
+        Colour testColour = new Colour(1.0f,1.0f,1.0f);
+        assertTrue(testColour.equals(testColour));
+    }
+
+    @Test
+    public void colourEqualsMethodNullCheckTest(){
+        Colour testColour = new Colour(1.0f,1.0f,1.0f);
+        assertTrue(!(testColour.equals(null)));
     }
 
 

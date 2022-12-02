@@ -1,4 +1,4 @@
-import java.io.IOException;
+
 
 public class Colour {
 
@@ -82,6 +82,22 @@ public class Colour {
         return true;
     }
 
+    @Override
+    public boolean equals(Object o){
+        if (this == o){
+            return true;
+        }
+        if (o == null){
+            return false;
+        }
+        if (this.getClass() != o.getClass()){
+            return false;
+        }
+        Colour testColour = (Colour) o;
+        return(this.getRed() == testColour.getRed()
+                && this.getGreen() == testColour.getGreen()
+                && this.getBlue() == testColour.getBlue());
+    }
 
     @Override
     public String toString(){
