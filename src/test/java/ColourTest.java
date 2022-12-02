@@ -38,7 +38,7 @@ public class ColourTest {
 
     @Test
     public void colourSingleParamConstructorCheckValidBytes(){
-        String input = "111111110700000000000000";
+        String input = "111111110100000000000000";
         String[] arrString = input.split("");
         for (int i = 0; i < arrString.length; i++){
             int j = Integer.parseInt(arrString[i]);

@@ -37,10 +37,25 @@ public class Colour {
     }
 
     public Colour(String rgbStringInput) throws IllegalArgumentException {
+
         if (rgbStringInput.length() != 24)
             throw new IllegalArgumentException("Input must be a String of length 24 with 3 valid bytes concatenated.");
 
+        if (!(this.checkValidByteFormat(rgbStringInput))){
+            throw new IllegalArgumentException("The input must be 3 valid bytes corresponding to each RGB.");
+        }
 
+    }
+
+    private boolean checkValidByteFormat(String input){
+        String[] arrString = input.split("");
+        for (int i = 0; i < arrString.length; i++) {
+            int j = Integer.parseInt(arrString[i]);
+            if (!(j == 0 || j == 1)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
