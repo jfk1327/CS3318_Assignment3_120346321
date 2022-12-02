@@ -39,12 +39,22 @@ public class ColourTest {
     @Test
     public void colourSingleParamConstructorCheckValidBytes(){
         String input = "111111110100000000000000";
+        Colour testColour = new Colour(input);
         String[] arrString = input.split("");
         for (int i = 0; i < arrString.length; i++){
             int j = Integer.parseInt(arrString[i]);
             assertTrue((j == 0 || j == 1));
         }
 
+    }
+    @Test
+    public void colourSingleParamTestSplitIntoBytes(){
+        String input = "111111111010101000000000";
+        Colour testColour = new Colour(input);
+        String[] byteArray = Colour.splitIntoBytes(input);
+        for (int i = 0; i < byteArray.length; i++){
+            assertEquals(8,byteArray[i].length());
+        }
     }
 
 

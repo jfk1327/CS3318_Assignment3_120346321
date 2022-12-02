@@ -47,6 +47,14 @@ public class Colour {
 
     }
 
+    public static String[] splitIntoBytes(String input) {
+        String[] byteArray = new String[3];
+        byteArray[0] = "000000000";
+        byteArray[1] = "11111111";
+        byteArray[2] = "01010101";
+        return byteArray;
+    }
+
     private boolean checkValidByteFormat(String input){
         String[] arrString = input.split("");
         for (int i = 0; i < arrString.length; i++) {
