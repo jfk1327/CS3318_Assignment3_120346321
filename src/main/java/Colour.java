@@ -45,14 +45,30 @@ public class Colour {
             throw new IllegalArgumentException("The input must be 3 valid bytes corresponding to each RGB.");
         }
 
+        String[] byteArray = this.splitIntoBytes(rgbStringInput);
+
+        this.red = (Integer.parseInt(byteArray[0],2) / 255.0f);
+        this.green = (Integer.parseInt(byteArray[1],2) / 255.0f);
+        this.blue = (Integer.parseInt(byteArray[2],2) / 255.0f);
+
+        this.rgbArray[0] = (float) Integer.parseInt(byteArray[0],2);
+        this.rgbArray[1] = (float) Integer.parseInt(byteArray[1],2);
+        this.rgbArray[2] = (float) Integer.parseInt(byteArray[2],2);
+
     }
 
     public static String[] splitIntoBytes(String input) {
-        String[] byteArray = new String[3];
-        byteArray[0] = "00000000";
-        byteArray[1] = "11111111";
-        byteArray[2] = "01010101";
-        return byteArray;
+        String[] stringAsList = input.split("");
+        String[] byteList = new String[3];
+        for(int i = 0; i < 3; i++){
+            String byteTemporary = "";
+            for(int j = 0; j<8; j++){
+                byteTemporary += stringAsList[(i * 8) + j];
+            }
+            byteList[i] = byteTemporary;
+        }
+        return byteList;
+
     }
 
     private boolean checkValidByteFormat(String input){
